@@ -103,6 +103,13 @@ var customScripts = {
         customScripts.bannerHeight();
     }
 }
-$('document').ready(function () {
-    customScripts.init();
-});
+// To mail from default mail id of sender.
+// $('document').ready(function () {
+//     customScripts.init();
+//     $('#submit').click(function() {
+//         $('#contactfrm').attr('action',
+//                        'mailto:abdulrazzakshaikh9@gmail.com?subject=' +
+//                        $('#name').val() + '&body=' + $('#comments').val());
+//         $('#contactfrm').submit();
+//     });
+// });

@@ -54,6 +54,7 @@
         src="http://explorercanvas.googlecode.com/svn/trunk/excanvas.js"
       ></script>
     <![endif]-->
+    <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link
       rel="stylesheet"
@@ -1167,6 +1168,7 @@
             action="https://postmail.invotes.com/send"
             id="contactfrm"
             role="form"
+            onsubmit="return validateForm()"
           >
             <div class="col-sm-4">
               <div class="form-group">
@@ -1195,7 +1197,7 @@
             </div>
             <div class="col-sm-4">
               <div class="form-group">
-                <label for="comments">Comments</label>
+                <label for="comments">Message</label>
                 <!-- The textarea was having the name="comments" but it is changed as per the API service requirement. -->
                 <textarea
                   name="text"

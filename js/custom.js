@@ -113,3 +113,19 @@ var customScripts = {
 //         $('#contactfrm').submit();
 //     });
 // });
+function validateForm() {
+    let x = document.forms["contactfrm"]["subject"].value;
+    let y = document.forms["contactfrm"]["text"].value;
+    let z = document.forms["contactfrm"]["name"].value;
+    if (x == "") {
+      alert("Email must be filled out");
+      return false;
+    } else if (y == "") {
+        alert("Enter some text in message box.");
+        return false;
+    }
+    else if (z == "") {
+        alert("Enter your name.");
+        return false;
+    }
+}

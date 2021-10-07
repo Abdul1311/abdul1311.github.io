@@ -129,3 +129,36 @@ function validateForm() {
         return false;
     }
 }
+
+$(document).ready(function () {
+    var clickScroll = false; //ADDED
+    
+        $('.nav-item').click(function () {
+        clickScroll = true; //ADDED
+            $(".nav-item").removeClass('active');
+            $(this).addClass('active');
+            $('html, body').animate({
+                scrollTop: $($(this).children().attr('href')).offset().top
+            }, 800, function(){
+                clickScroll = false; //After the animation is finished set the varriable back to false
+            });
+            return false;
+        });
+    
+        //Active Link
+    
+        $(window).scroll(function () {
+            var scrollbarLocation = $(this).scrollTop();
+            //console.log(scrollbarLocation);
+            $('.nav-link').each(function () {
+    
+                var sectionOffset = $($(this).attr('href')).offset().top;
+    
+                if (sectionOffset <= scrollbarLocation && !clickScroll) { //ADDED
+                    $(this).parent().addClass('active');
+                    $(this).parent().siblings().removeClass('active');
+                }
+            })
+        })
+    
+    });

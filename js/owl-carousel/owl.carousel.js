@@ -1509,4 +1509,22 @@ if (typeof Object.create !== "function") {
         startDragging : false,
         afterLazyLoad: false
     };
+    $(document).ready(function () {
+        $('#da-slider').cslider({
+    
+            current: 4,
+            // index of current slide
+    
+            bgincrement: 50,
+            // increment the background position
+            // (parallax effect) when sliding
+            circular: true,
+            autoplay: true,
+            // slideshow on / off
+    
+            intervalSec: 500
+            // time between transitions
+    
+        });
+    });
 }(jQuery, window, document));

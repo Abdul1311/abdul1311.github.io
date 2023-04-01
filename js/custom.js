@@ -103,62 +103,6 @@ var customScripts = {
         customScripts.bannerHeight();
     }
 }
-// To mail from default mail id of sender.
-// $('document').ready(function () {
-//     customScripts.init();
-//     $('#submit').click(function() {
-//         $('#contactfrm').attr('action',
-//                        'mailto:abdulrazzakshaikh9@gmail.com?subject=' +
-//                        $('#name').val() + '&body=' + $('#comments').val());
-//         $('#contactfrm').submit();
-//     });
-// });
-function validateForm() {
-    let x = document.forms["contactfrm"]["subject"].value;
-    let y = document.forms["contactfrm"]["text"].value;
-    let z = document.forms["contactfrm"]["name"].value;
-    if (x == "") {
-      alert("Email must be filled out");
-      return false;
-    } else if (y == "") {
-        alert("Enter some text in message box.");
-        return false;
-    }
-    else if (z == "") {
-        alert("Enter your name.");
-        return false;
-    }
-}
-
-$(document).ready(function () {
-    var clickScroll = false; //ADDED
-    
-        $('.nav-item').click(function () {
-        clickScroll = true; //ADDED
-            $(".nav-item").removeClass('active');
-            $(this).addClass('active');
-            $('html, body').animate({
-                scrollTop: $($(this).children().attr('href')).offset().top
-            }, 800, function(){
-                clickScroll = false; //After the animation is finished set the varriable back to false
-            });
-            return false;
-        });
-    
-        //Active Link
-    
-        $(window).scroll(function () {
-            var scrollbarLocation = $(this).scrollTop();
-            //console.log(scrollbarLocation);
-            $('.nav-link').each(function () {
-    
-                var sectionOffset = $($(this).attr('href')).offset().top;
-    
-                if (sectionOffset <= scrollbarLocation && !clickScroll) { //ADDED
-                    $(this).parent().addClass('active');
-                    $(this).parent().siblings().removeClass('active');
-                }
-            })
-        })
-    
-    });
+$('document').ready(function () {
+    customScripts.init();
+});
